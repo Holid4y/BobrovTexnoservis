@@ -1,0 +1,54 @@
+{% extends 'main/pattern.html' %}
+{% load static %}
+{% block title %}Контакты{% endblock %}
+{% block active2 %}active{% endblock %}
+{% block body %}
+<div class="card mb-4">
+    <div class="card-header" style="font-family: 'UR'">
+        Контакты
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Телефон:</h5><p><a href="#" disabled>8-473-504-09-07</a></p>
+        <h5 class="card-title">Email:</h5><p><a href="mailto:tehnoservis36@mail.ru">tehnoservis36@mail.ru</a></p>
+        <h5 class="card-title">Номер в реестре операторов технического осмотра:</h5><p><a href="http://oto-register.autoins.ru/oto/index.xhtml#oto=1155" class="card-link">01155</a></p>
+        <h5 class="card-title">График работы пунтка технического осмотра:</h5>
+        <p>
+            <span>Рабочие дни: </span><span class="text-success">Вторник-Суббота c 8:00 до:17:00</span><br>
+            <span>Перерыв: </span><span class="text-warning">В рабочие дни c 12:00 до 13:00</span><br>
+            <span>Выходные дни: </span><span class="text-danger">Воскресенье и Понедельник</span>
+        </p>
+    </div>
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-xxl-4 col-xl-4 col-lg-3 col-md-12 col-sm-12">Наши сотрудники</div>
+            <div class="col-xxl-3 col-xl-2 col-lg-3 col-md-12 col-sm-12">Телефон</div>
+            <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-12 col-sm-12">Email</div>
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12">Должность</div>
+        </div>
+    </div>
+    <div class="list-group list-group-flush">
+        {% for e in staff %}
+            <div class="card list-group-item search-item">
+                <div class="row">
+                    <span class="col-xxl-4 col-xl-4 col-lg-3 col-md-12 col-sm-12">{{ e.last_name }} {{ e.first_name }} {{ e.patronymic }}</span>
+                    <span class="col-xxl-3 col-xl-2 col-lg-3 col-md-12 col-sm-12">{{ e.phone }}</span>
+                    <span class="col-xxl-3 col-xl-4 col-lg-4 col-md-12 col-sm-12">{{ e.email }}</span>
+                    <span class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12">{{ e.post }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="card p-0">
+    <div class="card-header" style="font-family: 'UR'">
+        Расположение ООО "Техносервис"
+    </div>
+    <div class="card-body p-0">
+        <script type="text/javascript" charset="utf-8" async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A71b2dfbd562423132c70427fff0fb3f74bb633a53558a3afa85b6c4ff7e8cc58&amp;width=100%&amp;height=500&amp;lang=ru_RU&amp;scroll=true">
+        </script>
+    </div>
+</div>
+{% endblock %}

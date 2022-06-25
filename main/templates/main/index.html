@@ -1,0 +1,62 @@
+{% extends 'main/pattern.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block active0 %}active{% endblock %}
+{% block body %}
+<div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+    <div class="col">
+        <div class="card">
+            <div class="card-header" style="font-family: 'UR'">Осаго</div>
+            <img src="{% static 'main/img/osago.jpg' %}" alt="osago">
+            <div class="card-body"><a href="#" class="btn btn-primary col-12" data-bs-toggle="modal" data-bs-target="#modal2">Подробнее</a></div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header" style="font-family: 'UR'">Автозапчасти</div>
+            <img src="{% static 'main/img/avtozapchasti.jpg' %}" alt="avtozap">
+            <div class="card-body"><a href="#" class="btn btn-primary col-12">Подробнее</a></div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header" style="font-family: 'UR'">Ремонт автомобилей</div>
+            <img src="{% static 'main/img/remont.jpg' %}" alt="remontavto">
+            <div class="card-body"><a href="#" class="btn btn-primary col-12" data-bs-toggle="modal" data-bs-target="#modal3">Подробнее</a></div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header" style="font-family: 'UR'">Сервисное обслуживание</div>
+            <img src="{% static 'main/img/servis.jpg' %}" alt="servisobsluz">
+            <div class="card-body"><a href="#" class="btn btn-primary col-12" data-bs-toggle="modal" data-bs-target="#modal5">Подробнее</a></div>
+        </div>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+    {% for e in news %}
+        <div class="col">
+            <div class="card">
+                <div class="card-body" style="background-image: url({% static 'main/img/1.svg' %});background-repeat: no-repeat; background-position: 90%;background-size: 40%;">
+                    <h5 class="card-title" style="font-family: 'UR'; color:#4c88e2;">{{ e.title }}</h5>
+                    <p class="card-text">{{ e.text }}</p>
+                </div>
+                <div class="card-footer text-muted">{{ e.date }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="card">
+    <div class="card-header" style="font-family: 'UR'">
+        Уважаемые клиенты
+    </div>
+    <div class="card-body">
+        <p class="card-text">В соответствие с требованием РСА наша организация разместила сайт для
+            размещения подробной информации о нашем пункте ПТО. На страницах сайта вы найдете
+            правовые основы проведения технического осмотра вашего автомобиля. Также сможете
+            проверить выданный бланк технического осмотра на оригинальность.</p>
+        <p class="card-text">Если у Вас возникнут вопросы, Вы сможете задать его через форму
+            обратной связи слева.</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+*{font-family: 'UL';}
+
+/* Light */
+@font-face {font-family: 'UL';src: url(../fonts/Ubuntu-Light.ttf);}
+/* Medium */
+@font-face {font-family: 'UM';src: url(../fonts/Ubuntu-Medium.ttf);}
+/* Regular */
+@font-face {font-family: 'UR';src: url(../fonts/Ubuntu-Regular.ttf);}
+/* Bold */
+@font-face {font-family: 'UB';src: url(../fonts/Ubuntu-Bold.ttf);}
+
+body{background-color: #FBFBFD;}
+
+a{text-decoration: none;color: #0066CC;}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 10px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #F7F7F7;}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {background-color: #21252990;}
+::-webkit-scrollbar-thumb:hover {background-color: #212529;}
+.btn-primary{
+    background-color: #E7F1FF;
+    color: #0C63E4;
+    border-color: #DFDFDF;}
+
+footer{background-color: #FBFBFD;};

@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'main/img/ico.svg' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xxl navbar-dark bg-dark">
+        <div class="container-lg container-fluid">
+            <a class="navbar-brand" href="{% url 'main' %}" style="font-family: 'UM';"><img src="{% static 'main/img/ico.svg' %}" width="30" height="30" alt=""> ООО "Техносервис"</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link {% block active0 %}{% endblock %}" aria-current="page" href="{% url 'main' %}"><i class="bi bi-speedometer2"></i> Главная</a></li>
+                    <li class="nav-item"><a class="nav-link {% block active1 %}{% endblock %}" href="{% url 'info' %}"><i class="bi bi-card-text"></i> Информация для клиентов</a></li>
+                    <li class="nav-item"><a class="nav-link {% block active2 %}{% endblock %}" href="{% url 'contact' %}"><i class="bi bi-card-list"></i> Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link {% block active3 %}{% endblock %}" href="{% url 'about' %}"><i class="bi bi-person-video"></i> О нас</a></li>
+                    <li class="nav-item"><a class="nav-link {% block active4 %}{% endblock %}" href="{% url 'records' %}"><i class="bi bi-pencil"></i> Записи</a></li>
+                </ul>
+                <form class="d-flex text-center">
+                    <i class="bi bi-telephone" style="color: white;"></i><a class="mx-2 text-primary" href="tel:+74735040907">+7(473)504-09-07</a>
+                    <i class="bi bi-clock" style="color: white;"></i><span class="mx-2" id="time"></span>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-lg pt-4">
+        <div class="row">
+            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-12">
+                <div class="card mb-4">
+                    <div class="card-header" style="font-family: 'UR'"><i class="bi bi-postcard"></i> Наши услуги</div>
+                    <div class="card-body">
+                        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#modal1">Техосмотр</a><br>
+                        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#modal2">Осаго</a><br>
+                        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#modal3">Ремонт автомобилей</a><br>
+                        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#modal4">Автозапчасти</a><br>
+                        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#modal5">Сервисное обслуживание</a>
+                    </div>
+                </div>
+                <!-- Modal1 -->
+                <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'UR'">Уважаемые автовладельцы!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-title" style="font-family: 'UR'">Наш пунт технического осмотра находится по адресу:</p>
+                                <p class="card-text">Воронежская область, городское поселение Город Бобров, Бобров, улица 22 Января, 2/1 "Г"</p>
+                                <p class="card-title" style="font-family: 'UR'">График работы пунтка технического осмотра:</p>
+                                <p class="card-text">Рабочие дни: Вторник-Суббота <em>c 8:00 до 17:00</em> перерыв <em>c 12:00 до 13:00</em><br>Выходные дни: Воскресенье и Понедельник</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal2 -->
+                <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'UR'">Осаго</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-title" style="font-family: 'UR'">Что такое ОСАГО</p>
+                                <p class="card-text">ОСАГО — это обязательное страхование автогражданской ответственности, а по сути — страховой полис. Если случится ДТП, такой полис покроет нанесенный машинам ущерб и виновному не придется возмещать его из своего кармана. А пострадавшему не придется требовать с виновного средства на ремонт машины лично. Все это сделают за них страховые компании.</p>
+                                <p class="card-text">Стоимость полиса зависит от стажа вождения, мощности машины и региона, в котором зарегистрирован ее владелец. Например, в Москве владелец Лады Калины 2013 года выпуска заплатит около 4 тысяч рублей, а в Республике Тыва за такой же полис — 2 тысячи рублей.</p>
+                                <p class="card-title" style="font-family: 'UR'">Обязательно ли оформлять ОСАГО</p>
+                                <p class="card-text">Выбора, оформлять полис или не оформлять, в России не существует: эксплуатировать автомобили без действующего полиса ОСАГО запрещено. Полис обязательно должен быть у любого человека, кто управляет автомобилем.</p>
+                                <p class="card-title" style="font-family: 'UR'">Ответственность за вождение без ОСАГО</p>
+                                <p class="card-text">Наказание за вождение без полиса зависит от обстоятельств нарушения. Например, если договор страхования не заключали вообще или его действие закончилось и не продлили — выпишут штраф 800 Р. А если полис оформили только на одного водителя, а машиной управляет не он, — оштрафуют на 500 Р.</p>
+                                <p class="card-text">Если водитель не пользуется машиной, а просто держит ее в гараже или на стоянке, оформлять полис необязательно. Еще можно не страховать выставочные экземпляры автомобилей и музейные экспонаты. То есть к ответственности привлекут, только если ездить на машине и не страховать ее.</p>
+                                <p class="card-text">Но штраф — это не худшее, что может ожидать водителя. Если он окажется виновным в ДТП, ему придется и штраф оплатить, и ущерб возместить из собственного кармана. Если откажется — пострадавший может взыскать ущерб через суд. И судебная практика в данном случае будет на его стороне. Пример из суда: с виновника ДТП взыскали не только стоимость ремонта, но и деньги за утрату товарной стоимости автомобиля, расходы за экспертизу и на представителя. В судебных решениях удалены сведения о взысканной сумме, но она явно выше, чем стоимость полиса.</p>
+                                <p class="card-title" style="font-family: 'UR'">Нужен ли ОСАГО, если есть каско</p>
+                                <p class="card-text">Полис ОСАГО нужен всегда. А вот страхование по каско — дело добровольное. Между собой они никак не связаны. Полис каско может застраховать все риски, за исключением одного — гражданской ответственности. А гражданская ответственность возникает за нарушение обязанностей, которые предусмотрены гражданским правом — например, за нарушение правил дорожного движения. Если такое нарушение приведет к ущербу — его можно компенсировать по полису ОСАГО.</p>
+                                <p class="card-title" style="font-family: 'UR'">Чем отличается ОСАГО от каско.</p>
+                                <p class="card-text"> Полис ОСАГО не страхует ни вас самого, ни ваш автомобиль. Он работает только в том случае, если вы виноваты в ДТП и пострадали другие люди или их имущество. В этом случае вам платить за ущерб из собственного кармана не придется — его возместит страховщик.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal3 -->
+                <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'UR'">Ремонт автомобилей</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-title" style="font-family: 'UR'"></p>
+                                <p class="card-text">Ремонт — это комплекс работ, направленных на восстановление надежности автомобиля.</p>
+                                <p class="card-text">В комплекс ремонтных работ входят разборка машин и агрегатов, их мойка и очистка; дефектация и восстановление деталей; специальные работы; сборка, окрашивание и испытание агрегатов и машин.</p>
+                                <p class="card-text">Автомобиль может находиться в исправном, работоспособном состоянии, быть в неисправном или неработоспособном состоянии.</p>
+                                <p class="card-text">Исправное состояние автомобиля — это состояние, при котором он соответствует всем требованиям технических условий и конструкторской документации.</p>
+                                <p class="card-text">Неисправное состояние автомобиля — это такое состояние автомобиля, при котором на нем имеются механизмы, приборы и агрегаты, неисправные или не соответствующие требованиям технических условий и конструкторской документации.</p>
+                                <p class="card-text">Работоспособным состоянием автомобиля называется такое, при котором он способен выполнять определенную работу с параметрами, указанными в его технической характеристике.</p>
+                                <p class="card-text">Неработоспособное состояние автомобиля — это такое состояние автомобиля, при котором эксплуатировать его из-за поломки деталей или неисправностей приборов или агрегатов невозможно.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal4 -->
+                <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'UR'">Автозапчасти</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">...</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal5 -->
+                <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'UR'">Сервисное обслуживание</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="card-text">Сервисное обслуживание автомобиля это комплекс обязательных операций, предусмотренных заводом – изготовителем, который должен обеспечить безопасность, надежность, экологичность, комфорт при эксплуатации автомобиля. Сроки проведения технического обслуживания, на период гарантии, указан в сервисной книжке к автомобилю. Объем операций, их периодичность зависят от пробега автомобиля от времени, прошедшего после последнего ТО.</p>
+                                <p class="card-title" style="font-family: 'UR'">Регламенты ТО делятся на два вида:</p>
+                                <ul>
+                                    <li>Безусловная замена расходных деталей и материалов – моторное масло, масляный фильтр мотора, трансмиссионную жидкость, свечи зажигания, воздушный фильтр, топливный фильтр, жидкость гидроусилителя руля, противопылевой фильтр салона и т.д.</li>
+                                    <li>Контроль состояния всех узлов и деталей, касающихся безопасности автомобиля. Проверка тормозной системы, подвески, рулевого управления, трансмиссии и т.д. Без выполнения этих условий, эксплуатация автомобиля может привести к непредсказуемым последствиям. Как говорится, эти правила написаны кровью водителей/</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header" style="font-family: 'UR'"><i class="bi bi-percent"></i> Акции</div>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Зимнии акции</a><br>
+                        <a href="#" class="card-link">Другие акции</a><br>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary col-12 mb-4">Проверка техосмотра</button>
+
+                <div class="card mb-4">
+                    <div class="card-header" style="font-family: 'UR'"><i class="bi bi-pencil"></i> Записаться на
+                        техосмотр</div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.FirstName }}
+                            {{ form.Phone }}
+                            {{ form.Email }}
+                            {{ form.Message }}
+                            <div class="mb-3 form-check">
+                                {{ form.Checkbox }}
+                                <label class="form-check-label" for="exampleCheck1">Я согласен на обработку моих персональных данных</label>
+                            </div>
+                            <small>{{ error }}</small>
+                            <button class="btn btn-primary col-12" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-8 col-sm-12">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <footer class="my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a class="nav-link text-muted" href="{% url 'main' %}">Главная</a></li>
+            <li class="nav-item"><a class="nav-link text-muted" href="{% url 'info' %}">Информация для клиентов</a></li>
+            <li class="nav-item"><a class="nav-link text-muted" href="{% url 'contact' %}">Контакты</a></li>
+            <li class="nav-item"><a class="nav-link text-muted" href="{% url 'about' %}">О нас</a></li>
+            <li class="nav-item"><a class="nav-link text-muted" href="{% url 'records' %}">Записи</a></li>
+        </ul>
+        <p class="text-center text-muted">© ООО "Техносервис" 2022 Все права защищены.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'main/js/timeWork.js' %}"></script>
+    <script async src="{% static 'main/js/search.js' %}"></script>
+</body>
+</html>

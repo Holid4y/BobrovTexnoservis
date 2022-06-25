@@ -1,0 +1,15 @@
+
+<div class="card mb-4">
+    <div class="card-header" style="font-family: 'UR'"><i class="bi bi-pencil"></i> Записаться на техосмотр</div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.FirstName }}
+            {{ form.Phone }}
+            {{ form.Email }}
+            {{ form.Message }}
+            <small>{{ error }}</small>
+            <button class="btn btn-primary col-12" type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
